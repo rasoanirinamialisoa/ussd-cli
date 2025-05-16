@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
+import readlineSync from 'readline-sync'
 
 export const getInput = (message: string): string => {
-    return readlineSync.question(`${message}: `);
-};
+  return readlineSync.question(`${message}: `)
+}

@@ -1,3 +1,3 @@
-import mainMenu from './menus/mainMenu';
+import mainMenu from './menus/mainMenu'
 
-mainMenu();
+void mainMenu()
