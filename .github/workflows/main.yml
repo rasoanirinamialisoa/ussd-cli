@@ -13,6 +13,10 @@ jobs:
         uses: super-linter/super-linter@v7.4.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_JS: false
-          VALIDATE_TS: false
-          VALIDATE_CHECKOV: false
+          VALIDATE_JS: false          
+          VALIDATE_TS: false           
+          VALIDATE_CHECKOV: false      
+          VALIDATE_JSON: false         
+          VALIDATE_PRETTIER: false     
+          VALIDATE_STANDARD: false     
+          VALIDATE_ES: false        
