@@ -1,42 +1,17 @@
-name: Node.js CI/CD
+name: Super-Linter
 
 on:
   push:
-    branches: [main]
   pull_request:
-    branches: [main]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Lint code
-      run: npm run lint
-
-    - name: Run tests
-      run: npm test
-
-    - name: Build project
-      run: npm run build
-
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: ussd-menu
-        path: dist/
+      - uses: actions/checkout@v4
+      - name: Run Super-Linter
+        uses: super-linter/super-linter@v7.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JS: true
+          VALIDATE_TS: true
