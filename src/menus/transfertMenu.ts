@@ -24,9 +24,9 @@ const transfertMenu = () => {
 
     const code = getInput('Entrer le code secret');
     if (code === '1215') {
-        console.log("✅ Transaction réussie !");
+        console.log("Transaction réussie !");
     } else {
-        console.log("❌ Code secret incorrect.");
+        console.log("Code secret incorrect.");
     }
 };
 
